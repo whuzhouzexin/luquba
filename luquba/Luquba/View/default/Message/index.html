@@ -1,0 +1,48 @@
+	<div class="container">
+		<div class="well  well-sm">
+				<button type="button" class="btn btn-primary"><a href="{:U('Message/index')}" >每日寄语</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Logion/index')}">名言管理</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Story/index')}" >励志故事</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Toptips/index')}">状元心得</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('School/index')}" >校花校草</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Relaxtime/index')}">轻松一刻</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Info/feedback')}">反馈信息</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Info/index')}">产品信息</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Info/helpshow')}">帮助信息</a></button>
+			
+			
+		</div>
+
+			<table class="table table-bordered">
+			      <thead>
+			        <tr>
+			          <th>uid</th>
+			          <th>寄语id</th>
+			          <th>文字</th>
+			          <th>图片地址</th>
+			          <th>创建时间</th>
+			          <th>操作/删除</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			      	<volist id="sendword" name="sendword">
+
+			      		<tr>
+			      		  <th scope="row" >{$sendword.uid}</th>
+			      		  <td>{$sendword.id}</td>
+			      		  <td>{$sendword.text}</td>
+			      		   <td>{$sendword.pic}</td>
+			      		  <td>{$sendword.createtime|date="y-m-d",###}</td>
+			      		  <td class="deleteMessage deleteadmin"  id="{$sendword.id}" ur="{:U('Message/deleteMessage')}">删除</td>
+			      		</tr>
+			      		
+			      	</volist>
+			       
+			        
+			      </tbody>
+		    </table>
+		    <div class="page">
+		    	{$page}
+		    </div>
+
+   </div>

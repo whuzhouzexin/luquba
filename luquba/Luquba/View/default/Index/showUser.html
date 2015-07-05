@@ -1,0 +1,36 @@
+	<div class="container">
+		<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="" >用户列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Index/selectUser')}">查找用户</a></button>
+
+		</div>
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>uid</th>
+		          <th>用户名</th>
+		          <th>电话号码</th>
+		          <th>最后登录ip</th>
+		           <th>操作/删除</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		      	<volist id="users" name="users">
+
+		      		<tr>
+		      		  <th scope="row" class="userid" >{$users.uid}</th>
+		      		  <td>{$users.username}</td>
+		      		  <td>{$users.tel}</td>
+		      		  <td>{$users.lastip}</td>
+		      		  <td class="deleteuser"  uid="{$users.uid}" ur="{:U('Index/deleteUser')}">删除</td>
+		      		</tr>
+		      		
+		      	</volist>
+		       
+		        
+		      </tbody>
+	    </table>
+	    <div class="page">
+	    	{$page}
+	    </div>
+   </div>

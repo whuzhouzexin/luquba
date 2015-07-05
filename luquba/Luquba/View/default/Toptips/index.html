@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('Toptips/index')}" >状元心得列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Toptips/add')}">添加状元心得</a></button>
+			
+		
+		
+	</div>
+
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>id</th>
+		          <th>标题</th>
+		          <th>来源</th>
+		          <th>作者</th>
+		          <th>创建时间</th>
+		          <th>操作/编辑</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		      	<volist id="Toptips" name="Toptips">
+
+		      		<tr>
+		      		  <th >{$Toptips.id}</th>
+		      		  <td>{$Toptips.title}</td>
+		      		  <td>{$Toptips.origin}</td>
+		      		   <td>{$Toptips.author}</td>
+
+		      		  <td>{$Toptips.createtime|date="y-m-d",###}</td>
+		      		  <td class="updateToptips deleteadmin"  ><a href="{:U('Toptips/update')}?id={$Toptips.id}" style="display:block;width:100%;">编辑</a></td>
+		      		</tr>
+		      		
+		      	</volist>
+		       
+		        
+		      </tbody>
+	    </table>
+	    <div class="page">
+	    	{$page}
+	    </div>
+
+</div>

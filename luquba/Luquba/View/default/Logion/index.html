@@ -1,0 +1,43 @@
+	<div class="container">
+		<div class="well  well-sm">
+				<button type="button" class="btn btn-primary"><a href="{:U('Logion/index')}" >名言列表</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Logion/add')}">添加名言</a></button>
+				
+			
+			
+		</div>
+
+			<table class="table table-bordered">
+			      <thead>
+			        <tr>
+			          <th>id</th>
+			          <th>作者</th>
+			          <th>国籍</th>
+			          <th>内容</th>
+			          <th>创建时间</th>
+			          <th>操作/删除</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			      	<volist id="logion" name="logion">
+
+			      		<tr>
+			      		  <th  >{$logion.id}</th>
+			      		  <td>{$logion.author}</td>
+			      		  <td>{$logion.country}</td>
+			      		   <td>{$logion.content}</td>
+
+			      		  <td>{$logion.createtime|date="y-m-d",###}</td>
+			      		  <td class="updatelogion deleteadmin"  ><a href="{:U('Logion/update')}?id={$logion.id}" style="display:block;width:100%;">编辑</a></td>
+			      		</tr>
+			      		
+			      	</volist>
+			       
+			        
+			      </tbody>
+		    </table>
+		    <div class="page">
+		    	{$page}
+		    </div>
+
+   </div>

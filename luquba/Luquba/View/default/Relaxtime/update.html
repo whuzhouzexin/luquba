@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('Relaxtime/index')}" >轻松一刻列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Relaxtime/add')}">添加轻松一刻</a></button>
+		
+		
+	</div>
+	<form action="{:U('Relaxtime/save')}" method="post" enctype="multipart/form-data"  >
+     <div class="form-group">
+       <label for="country">ID：</label>
+       <input type="text" class="form-control" id="inputPassword"  name="id" value="{$detail.id}">
+     </div>
+
+	 <div class="form-group">
+	   <label for="text">标题：</label>
+	   <input type="text" class="form-control" id="nickname" name="title" value="{$detail.title}" >
+	 </div>
+
+	 <div class="form-group">
+	   <label for="text">来源：</label>
+	   <input type="text" class="form-control" id="nickname" name="from" value="{$detail.origin}" >
+	 </div>
+
+	 
+
+	  <div class="form-group">
+	    <label for="text">作者：</label>
+	    <input type="text" class="form-control" id="nickname" name="username" value="{$detail.author}">
+	  </div>
+	   <div class="form-group">
+	    <label for="country">类型：</label>
+	    <select class="form-control" name="type">
+	    	<option>1</option>
+	    	<option>2</option>
+	    	<option>3</option>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <script id="container" name="content" type="text/plain">
+	       {$detail.intro|htmlspecialchars_decode}
+	    </script>
+	   
+	  </div>
+	 
+	  <button type="submit" class="btn btn-default">保存</button>
+	</form>
+	<script>
+	$(function(){
+	    var ue = UE.getEditor('container',{
+	        serverUrl :'{:U('Index/editor')}',
+	        elementPathEnabled:false,
+	         initialFrameHeight: 400
+	    });
+
+	})
+	</script>
+</div>

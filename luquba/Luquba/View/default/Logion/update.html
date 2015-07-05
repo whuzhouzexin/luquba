@@ -1,0 +1,33 @@
+	<div class="container">
+		<div class="well  well-sm">
+				<button type="button" class="btn btn-primary"><a href="{:U('Logion/index')}" >名言列表</a></button>
+				<button type="button" class="btn btn-primary"><a href="{:U('Logion/add')}">添加名言</a></button>
+				
+			
+			
+		</div>
+		<form  method="post" enctype="multipart/form-data" action="{:U('Logion/updateOne')}">
+		  <div class="form-group">
+		    <label for="text">ID：</label>
+		    <input type="text" class="form-control" id="nickname" name="id" value="{$logion.id}" >
+		  </div>
+		  <div class="form-group">
+		    <label for="text">作者：</label>
+		    <input type="text" class="form-control" id="nickname" name="username" value="{$logion.author}" >
+		  </div>
+		  <div class="form-group">
+		    <label for="country">国籍：</label>
+		    <input type="text" class="form-control" id="inputPassword"  name="country" value="{$logion.country}">
+		  </div>
+		  <div class="form-group">
+		    <label for="adminrole">内容：</label>
+		    <textarea class="form-control" rows="6" name="content">
+		       {$logion.content}
+		    	
+		    </textarea>
+		   
+		  </div>
+		 
+		  <button type="submit" class="btn btn-default">更新</button>
+		</form>
+  </div>

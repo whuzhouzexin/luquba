@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('Story/index')}" >励志故事列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Story/add')}">添加励志故事</a></button>
+			
+		
+		
+	</div>
+
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>id</th>
+		          <th>标题</th>
+		          <th>来源</th>
+		          <th>作者</th>
+		          <th>创建时间</th>
+		          <th>操作/编辑</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		      	<volist id="story" name="story">
+
+		      		<tr>
+		      		  <th >{$story.id}</th>
+		      		  <td>{$story.title}</td>
+		      		  <td>{$story.origin}</td>
+		      		   <td>{$story.author}</td>
+
+		      		  <td>{$story.createtime|date="y-m-d",###}</td>
+		      		  <td class="updatestory deleteadmin"  ><a href="{:U('Story/update')}?id={$story.id}" style="display:block;width:100%;">编辑</a></td>
+		      		</tr>
+		      		
+		      	</volist>
+		       
+		        
+		      </tbody>
+	    </table>
+	    <div class="page">
+	    	{$page}
+	    </div>
+
+</div>

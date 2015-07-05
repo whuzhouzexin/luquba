@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('Relaxtime/index')}" >轻松一刻列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Relaxtime/add')}">添加轻松一刻</a></button>
+			
+		
+		
+	</div>
+
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>id</th>
+		          <th>标题</th>
+		          <th>来源</th>
+		          <th>作者</th>
+		          <th>创建时间</th>
+		          <th>操作/编辑</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		      	<volist id="Relaxtime" name="Relaxtime">
+
+		      		<tr>
+		      		  <th >{$Relaxtime.id}</th>
+		      		  <td>{$Relaxtime.title}</td>
+		      		  <td>{$Relaxtime.origin}</td>
+		      		   <td>{$Relaxtime.author}</td>
+
+		      		  <td>{$Relaxtime.createtime|date="y-m-d",###}</td>
+		      		  <td class="updateRelaxtime deleteadmin"  ><a href="{:U('Relaxtime/update')}?id={$Relaxtime.id}" style="display:block;width:100%;">编辑</a></td>
+		      		</tr>
+		      		
+		      	</volist>
+		       
+		        
+		      </tbody>
+	    </table>
+	    <div class="page">
+	    	{$page}
+	    </div>
+
+</div>

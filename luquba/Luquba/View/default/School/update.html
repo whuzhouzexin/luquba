@@ -1,0 +1,50 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('School/index')}" >校花校草列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('School/add')}">添加校花校草</a></button>
+		
+		
+	</div>
+	<form action="{:U('School/save')}" method="post" enctype="multipart/form-data"  >
+     <div class="form-group">
+       <label for="country">ID：</label>
+       <input type="text" class="form-control" id="inputPassword"  name="id" value="{$detail.id}">
+     </div>
+
+	 <div class="form-group">
+	   <label for="text">标题：</label>
+	   <input type="text" class="form-control" id="nickname" name="title" value="{$detail.title}" >
+	 </div>
+
+	 <div class="form-group">
+	   <label for="text">来源：</label>
+	   <input type="text" class="form-control" id="nickname" name="from" value="{$detail.origin}" >
+	 </div>
+
+	 
+
+	  <div class="form-group">
+	    <label for="text">作者：</label>
+	    <input type="text" class="form-control" id="nickname" name="username" value="{$detail.author}">
+	  </div>
+	  
+	  <div class="form-group">
+	    <script id="container" name="content" type="text/plain">
+	       {$detail.intro|htmlspecialchars_decode}
+	    </script>
+	   
+	  </div>
+	 
+	  <button type="submit" class="btn btn-default">保存</button>
+	</form>
+	<script>
+	$(function(){
+	    var ue = UE.getEditor('container',{
+	        serverUrl :'{:U('Index/editor')}',
+	        elementPathEnabled:false,
+	         initialFrameHeight: 400
+	    });
+
+	})
+	</script>
+</div>

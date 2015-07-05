@@ -1,0 +1,47 @@
+	<div class="container">
+		<div class="well  well-sm">
+				
+				
+				<button type="button" class="btn btn-primary"><a href="{:U('Info/helpshow')}">帮助信息列表</a></button>
+        <button type="button" class="btn btn-primary"><a href="{:U('Info/addhelp')}" >添加帮助信息</a></button>
+       
+			
+			
+		</div>
+         
+       	<table class="table table-bordered">
+       	      <thead>
+       	        <tr>
+       	          <th>id</th>
+       	          <th>问题</th>
+       	          <th>答案</th>
+       	         
+       	         <th>创建时间</th>
+                 <th>更新时间</th>
+                 <th>操作/更新</th>
+       	        </tr>
+       	      </thead>
+       	      <tbody>
+       	      	<volist id="info" name="info">
+
+       	      		<tr>
+       	      		  <th >{$info.id}</th>
+       	      		  <td>{$info.question}</td>
+       	      		
+       	      		   <td>{$info.answer}</td>
+
+       	      		  <td>{$info.createtime|date="y-m-d",###}</td>
+       	      		 <td>{$info.lasttime|date="y-m-d",###}</td>
+                    <td><a href="{:U('Info/update')}?id={$info.id}" style="display:block;width:100%;">编辑</a></td>
+       	      		</tr>
+       	      		
+       	      	</volist>
+       	       
+       	        
+       	      </tbody>
+           </table>
+           <div class="page">
+           	{$page}
+           </div>
+
+   </div>

@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('School/index')}" >校花校草列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('School/add')}">添加校花校草</a></button>
+			
+		
+		
+	</div>
+
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>id</th>
+		          <th>标题</th>
+		          <th>来源</th>
+		          <th>作者</th>
+		          <th>创建时间</th>
+		          <th>操作/编辑</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		      	<volist id="schoolbeauty" name="schoolbeauty">
+
+		      		<tr>
+		      		  <th >{$schoolbeauty.id}</th>
+		      		  <td>{$schoolbeauty.title}</td>
+		      		  <td>{$schoolbeauty.origin}</td>
+		      		   <td>{$schoolbeauty.author}</td>
+
+		      		  <td>{$schoolbeauty.createtime|date="y-m-d",###}</td>
+		      		  <td class="updateSchool deleteadmin"  ><a href="{:U('School/update')}?id={$schoolbeauty.id}" style="display:block;width:100%;">编辑</a></td>
+		      		</tr>
+		      		
+		      	</volist>
+		       
+		        
+		      </tbody>
+	    </table>
+	    <div class="page">
+	    	{$page}
+	    </div>
+
+</div>

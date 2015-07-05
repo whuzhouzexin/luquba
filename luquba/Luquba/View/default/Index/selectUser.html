@@ -1,0 +1,45 @@
+<div class="container">
+		<div class="well  well-sm">
+			<button type="button" class="btn btn-primary"><a href="{:U('Index/showUser')}" >用户列表</a></button>
+			<button type="button" class="btn btn-primary"><a href="{:U('Index/selectUser')}">查找用户</a></button>
+
+		</div>
+		<form class="form-inline" style="margin-bottom:50px;">
+
+		<div class="form-group">
+		  <label for="email">用户ID</label>
+		  <input type="text" class="form-control" value="" >
+		</div>
+		  <div class="form-group">
+		    <label for="username">用户名</label>
+		    <input type="text" class="form-control" >
+		  </div>
+		  <div class="form-group">
+		    <label for="email">电话号码</label>
+		    <input type="text" class="form-control" >
+		  </div>
+		   <div class="form-group">
+		    <label for="email">登录ip</label>
+		    <input type="text" class="form-control" >
+		  </div>
+		  <a  class="btn btn-default" id="search" ur="{:U('Index/selectUs')}" delete="{:U('Index/deleteUser')}">查找</a>
+
+		</form>
+
+		<table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>uid</th>
+		          <th>用户名</th>
+		          <th>电话号码</th>
+		          <th>最后登录ip</th>
+		          <th>操作/删除</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		    
+		       
+		        
+		      </tbody>
+	    </table>
+ </div>
